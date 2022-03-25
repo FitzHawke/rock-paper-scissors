@@ -1,9 +1,9 @@
 function computerPlay() {
-  let a = Math.floor(Math.random() * 3);
+    let a = Math.floor(Math.random() * 3);
 
-  return a;
+    return a;
 
-  /* switch (a) {
+    /* switch (a) {
     case 0:
       return "Rock";
     case 1:
@@ -13,5 +13,12 @@ function computerPlay() {
   } */
 }
 
+function playerChoose() {
+    console.log("Choose Rock, Paper or Scissors");
+    const choice = prompt("What is your choice?");
+    return choice;
+}
+
 let compChoice = computerPlay();
-console.log(compChoice);
+let playChoice = playerChoose();
+console.log(compChoice, playChoice);
