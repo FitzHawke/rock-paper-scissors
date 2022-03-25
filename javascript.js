@@ -15,8 +15,11 @@ function computerPlay() {
 
 function playerChoose() {
     console.log("Choose Rock, Paper or Scissors");
-    const choice = prompt("What is your choice?");
-    return choice;
+    let choice = prompt("What is your choice?");
+    choice = choice.toLowerCase();
+    if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        return choice;
+    } else {console.log("invalid choice")}
 }
 
 function playGame(player, computer) {
