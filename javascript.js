@@ -19,6 +19,47 @@ function playerChoose() {
     return choice;
 }
 
+function playGame(player, computer) {
+    switch (computer) {
+        case 0:
+            switch (player) {
+                case "rock":
+                    console.log("Draw");
+                    break;
+                case "paper":
+                    console.log("You Win!");
+                    break;
+                case "scissors":
+                    console.log("You Lose");
+            }
+            break;
+        case 1:
+            switch (player) {
+                case "paper":
+                    console.log("Draw");
+                    break;
+                case "scissors":
+                    console.log("You Win!");
+                    break;
+                case "rock":
+                    console.log("You Lose");
+            }
+            break;
+        case 2:
+            switch (player) {
+                case "scissors":
+                    console.log("Draw");
+                    break;
+                case "rock":
+                    console.log("You Win!");
+                    break;
+                case "paper":
+                    console.log("You Lose");
+            }
+    }
+}
+
 let compChoice = computerPlay();
 let playChoice = playerChoose();
 console.log(compChoice, playChoice);
+playGame(playChoice, compChoice);
