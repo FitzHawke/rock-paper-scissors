@@ -1,16 +1,6 @@
 function computerPlay() {
     let a = Math.floor(Math.random() * 3);
-
     return a;
-
-    /* switch (a) {
-    case 0:
-      return "Rock";
-    case 1:
-      return "Paper";
-    case 2:
-      return "Scissors";
-  } */
 }
 
 function playerChoose() {
@@ -24,40 +14,40 @@ function playerChoose() {
 
 function playGame(player, computer) {
     switch (computer) {
-        case 0:
+        case 0: //rock
             switch (player) {
                 case "rock":
-                    console.log("Draw");
+                    console.log("Draw, You both chose Rock.");
                     break;
                 case "paper":
-                    console.log("You Win!");
+                    console.log("You Win! Paper beats Rock!");
                     break;
                 case "scissors":
-                    console.log("You Lose");
+                    console.log("You Lose. Rock beats Scissors.");
             }
             break;
-        case 1:
+        case 1: //paper
             switch (player) {
                 case "paper":
-                    console.log("Draw");
+                    console.log("Draw, You both chose Paper.");
                     break;
                 case "scissors":
-                    console.log("You Win!");
+                    console.log("You Win! Scissors beats Paper!");
                     break;
                 case "rock":
-                    console.log("You Lose");
+                    console.log("You Lose. Paper beats Rock.");
             }
             break;
-        case 2:
+        case 2: //scissors
             switch (player) {
                 case "scissors":
-                    console.log("Draw");
+                    console.log("Draw, You both chose Scissors.");
                     break;
                 case "rock":
-                    console.log("You Win!");
+                    console.log("You Win! Rock beats Scissors!");
                     break;
                 case "paper":
-                    console.log("You Lose");
+                    console.log("You Lose. Scissors beats Paper.");
             }
     }
 }
