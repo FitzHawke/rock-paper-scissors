@@ -1,6 +1,13 @@
 function computerPlay() {
     let a = Math.floor(Math.random() * 3);
-    return a;
+    switch (a) {
+        case 0:
+            return "rock";
+        case 1:
+            return "paper";
+        case 2:
+            return "scissors";
+    }
 }
 
 function playerChoose() {
@@ -17,7 +24,7 @@ function playerChoose() {
 function playRound(player, computer) {
     // compare computer choice with player choice to determine winner
     switch (computer) {
-        case 0: //rock
+        case "rock":
             switch (player) {
                 case "rock":
                     console.log("Draw, You both chose Rock.");
@@ -30,7 +37,7 @@ function playRound(player, computer) {
                     return 2;
             }
             break;
-        case 1: //paper
+        case "paper":
             switch (player) {
                 case "paper":
                     console.log("Draw, You both chose Paper.");
@@ -43,7 +50,7 @@ function playRound(player, computer) {
                     return 2;
             }
             break;
-        case 2: //scissors
+        case "scissors":
             switch (player) {
                 case "scissors":
                     console.log("Draw, You both chose Scissors.");
@@ -59,7 +66,7 @@ function playRound(player, computer) {
 }
 
 function playGame() {
-    console.log("Lets play Rock Paper Scissors! Best of 5 wins");
+    /* console.log("Lets play Rock Paper Scissors! Best of 5 wins");
     let pWin = 0; //Player Wins
     let cWin = 0; //Computer Wins
 
@@ -74,7 +81,11 @@ function playGame() {
         } else if (winner === 2) {
             cWin++;
         }
-    }
+    } */
+
+    const compChoice = computerPlay();
+    const playChoice = playerChoose();
+    let winner = playRound(playChoice, compChoice);
 
     // build a statement and output the winner of the game
     if (pWin === 3) {
