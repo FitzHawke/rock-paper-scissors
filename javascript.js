@@ -10,17 +10,6 @@ function computerPlay() {
     }
 }
 
-function playerChoose() {
-    console.log("Choose Rock, Paper or Scissors");
-    let choice = prompt("What is your choice?");
-    choice = choice.toLowerCase();
-    if (choice === "rock" || choice === "paper" || choice === "scissors") {
-        return choice;
-    } else {
-        console.log("invalid choice");
-    }
-}
-
 function playRound(player, computer) {
     // compare computer choice with player choice to determine winner
     switch (computer) {
@@ -65,36 +54,14 @@ function playRound(player, computer) {
     }
 }
 
-function playGame() {
-    /* console.log("Lets play Rock Paper Scissors! Best of 5 wins");
-    let pWin = 0; //Player Wins
-    let cWin = 0; //Computer Wins
+function playGame(playerChoice) {
+    console.log(playerChoice);
+    let compChoice = computerPlay();
 
-    //loop until either contestant has 3 wins (best of 5)
-    for (let i = 0; pWin < 3 && cWin < 3; ) {
-        const compChoice = computerPlay();
-        const playChoice = playerChoose();
-        let winner = playRound(playChoice, compChoice);
-
-        if (winner === 1) {
-            pWin++;
-        } else if (winner === 2) {
-            cWin++;
-        }
-    } */
-
-    const compChoice = computerPlay();
-    const playChoice = playerChoose();
-    let winner = playRound(playChoice, compChoice);
-
-    // build a statement and output the winner of the game
-    if (pWin === 3) {
-        let statement = "You win, " + pWin + " games to " + cWin;
-        console.log(statement);
-    } else if (cWin === 3) {
-        let statement = "You lose, " + cWin + " games to " + pWin;
-        console.log(statement);
-    }
+    playRound(playerChoice, compChoice);
 }
 
-playGame();
+let button = document.querySelectorAll("button");
+button.forEach((btn) =>
+    btn.addEventListener("click", (e) => playGame(e.target.className))
+);
