@@ -20,10 +20,12 @@ function playRound(player, computer) {
                     outcome.textContent = "Draw, You both chose Rock.";
                     return 0;
                 case "paper":
-                    outcome.textContent = "You Win! Paper beats Rock!";
+                    outcome.textContent =
+                        "You Win this round! Paper beats Rock!";
                     return 1;
                 case "scissors":
-                    outcome.textContent = "You Lose. Rock beats Scissors.";
+                    outcome.textContent =
+                        "You Lose this round. Rock beats Scissors.";
                     return 2;
             }
             break;
@@ -33,10 +35,12 @@ function playRound(player, computer) {
                     outcome.textContent = "Draw, You both chose Paper.";
                     return 0;
                 case "scissors":
-                    outcome.textContent = "You Win! Scissors beats Paper!";
+                    outcome.textContent =
+                        "You Win this round! Scissors beats Paper!";
                     return 1;
                 case "rock":
-                    outcome.textContent = "You Lose. Paper beats Rock.";
+                    outcome.textContent =
+                        "You Lose this round. Paper beats Rock.";
                     return 2;
             }
             break;
@@ -46,10 +50,12 @@ function playRound(player, computer) {
                     outcome.textContent = "Draw, You both chose Scissors.";
                     return 0;
                 case "rock":
-                    outcome.textContent = "You Win! Rock beats Scissors!";
+                    outcome.textContent =
+                        "You Win this round! Rock beats Scissors!";
                     return 1;
                 case "paper":
-                    outcome.textContent = "You Lose. Scissors beats Paper.";
+                    outcome.textContent =
+                        "You Lose this round. Scissors beats Paper.";
                     return 2;
             }
     }
@@ -64,6 +70,16 @@ function playGame(playerChoice) {
 
     let score = document.querySelector(".scorecard");
     score.textContent = `${pWin} - ${cWin}`;
+
+    if (pWin === 5) {
+        score.textContent = `You win the game ${pWin} - ${cWin}!`;
+        pWin = 0;
+        cWin = 0;
+    } else if (cWin === 5) {
+        score.textContent = `You lose the game ${pWin} - ${cWin}.`;
+        pWin = 0;
+        cWin = 0;
+    }
 }
 
 let pWin = 0;
