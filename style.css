@@ -1,0 +1,26 @@
+.vert {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+}
+
+.score {
+    margin: auto;
+    border: 2px solid black;
+}
+
+.outcome {
+    margin: auto;
+    border: 2px solid black;
+}
